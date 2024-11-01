@@ -1,6 +1,6 @@
 schemaVersion: 3
 meta:
-  sourceVersionId: f20c60d3-a406-4cda-94b9-af9ceada3779 # DO NOT CHANGE - Hex uses this to match up project versions when reimporting the file
+  sourceVersionId: 61548168-60f2-43c9-8f23-79f91a3deaa6 # DO NOT CHANGE - Hex uses this to match up project versions when reimporting the file
   description: ""
   projectId: a7412569-8e2d-4a52-afbb-2e937813b213 # DO NOT CHANGE - Unique ID of the project from which this file was generated
   title: Git Test 1
@@ -213,14 +213,6 @@ cells:
         pinIndexColumns: false
         showAggregations: false
         columnAggregations: null
-  - cellType: TEXT
-    cellId: c7ca533e-163e-453b-a662-ebb29793ee29 # DO NOT CHANGE - Hex uses this to match up cells when reimporting the file, and detect any changes to existing cells
-    cellLabel: null
-    config:
-      richText:
-        - type: paragraph
-          children:
-            - text: Added a text cell!
 appLayout:
   visibleMetadataFields:
     - NAME
@@ -254,17 +246,6 @@ appLayout:
                   hideOutput: false
                   type: CELL
                   cellId: d1c6399e-3670-4a41-b3f6-e180dc83b775
-                  sharedFilterId: null
-                  height: null
-                  showLabel: true
-        - columns:
-            - start: 0
-              end: 120
-              elements:
-                - showSource: false
-                  hideOutput: false
-                  type: CELL
-                  cellId: c7ca533e-163e-453b-a662-ebb29793ee29
                   sharedFilterId: null
                   height: null
                   showLabel: true
