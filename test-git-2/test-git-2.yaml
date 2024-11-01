@@ -1,6 +1,6 @@
 schemaVersion: 3
 meta:
-  sourceVersionId: 28eeca16-15f2-45ec-97f0-258b57487af9 # DO NOT CHANGE - Hex uses this to match up project versions when reimporting the file
+  sourceVersionId: f1a0f132-78d8-47fa-b057-897f7eff7904 # DO NOT CHANGE - Hex uses this to match up project versions when reimporting the file
   description: ""
   projectId: 5dd32695-2c9e-4631-82d9-6013ae714e6c # DO NOT CHANGE - Unique ID of the project from which this file was generated
   title: Test Git 2
@@ -254,75 +254,6 @@ cells:
             - text: Visualize data dynamically based on the Dashboard Inputs in the first section.
               italic: true
   - cellType: CHARTV2
-    cellId: 9aa52025-da23-4580-8c76-3690352ebe77 # DO NOT CHANGE - Hex uses this to match up cells when reimporting the file, and detect any changes to existing cells
-    cellLabel: Revenue by category over time
-    config:
-      height: null
-      chartSpec:
-        type: layered
-        layers:
-          - id: 348a883a-fdee-41fe-bb18-e7a0fb848dfd
-            xAxis:
-              type: datetime
-              style:
-                grid:
-                  style: solid
-                ticks: {}
-                labels: {}
-              timeUnit: yearmonth
-              dataFrameColumn: ORDER_DATE
-            series:
-              - id: 42249f60-6b23-4f9b-a85f-c601931a6184
-                type: line
-                axis:
-                  type: number
-                  style:
-                    grid:
-                      style: solid
-                    ticks: {}
-                    labels: {}
-                  aggregate: sum
-                dataFrameColumns:
-                  - PRICE
-                colorDataFrameColumn: CATEGORY
-                colorOrder: ascending
-                color:
-                  type: series
-                  colorsBySeriesValues: {}
-                opacity:
-                  type: static
-                  value: 1
-                tooltip:
-                  type: auto
-                point: false
-                stroke: solid
-            dataFrame: parameterized_query_results
-        settings:
-          legend:
-            position: right
-          tooltip: true
-          selectionEnabled: false
-      chartSelection: {}
-      colorMappings:
-        "6.0": "#3e277a"
-        "7.0": "#b28fc9"
-        "8.0": "#2458b3"
-        "8.5": "#669eff"
-        "9.0": "#00998c"
-        "10.0": "#14ccbd"
-        "10.5": "#d99e0b"
-        "11.0": "#ffc940"
-        "12.0": "#717a94"
-        "14.5": "#b1b6c4"
-        "16.0": "#6a5898"
-        "16.5": "#9588b6"
-        Veggies: "#F58518"
-        Dumplings: "#4C78A8"
-      resultVariable: filter_result
-      outputResult: false
-      displayType: CHART
-      displayTableConfig: null
-  - cellType: CHARTV2
     cellId: 1769a7ff-e741-41b4-bac1-7c6f3fa0d480 # DO NOT CHANGE - Hex uses this to match up cells when reimporting the file, and detect any changes to existing cells
     cellLabel: Distribution of order price
     config:
@@ -377,6 +308,14 @@ cells:
       outputResult: false
       displayType: CHART
       displayTableConfig: null
+  - cellType: TEXT
+    cellId: 43d6d472-8568-41f1-8f75-237685567cf1 # DO NOT CHANGE - Hex uses this to match up cells when reimporting the file, and detect any changes to existing cells
+    cellLabel: null
+    config:
+      richText:
+        - type: h4
+          children:
+            - text: Test add a text cell!
   - cellType: TEXT
     cellId: 65088e97-1b84-4a21-9455-07fdc58d6437 # DO NOT CHANGE - Hex uses this to match up cells when reimporting the file, and detect any changes to existing cells
     cellLabel: null
@@ -562,17 +501,6 @@ appLayout:
                   hideOutput: false
                   type: CELL
                   cellId: 9deb4095-e3c2-4832-9735-0ec8f8ee6f72
-                  sharedFilterId: null
-                  height: null
-                  showLabel: true
-        - columns:
-            - start: 0
-              end: 120
-              elements:
-                - showSource: false
-                  hideOutput: false
-                  type: CELL
-                  cellId: 9aa52025-da23-4580-8c76-3690352ebe77
                   sharedFilterId: null
                   height: null
                   showLabel: true
