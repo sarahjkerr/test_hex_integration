@@ -1,0 +1,271 @@
+schemaVersion: 3
+meta:
+  sourceVersionId: f20c60d3-a406-4cda-94b9-af9ceada3779 # DO NOT CHANGE - Hex uses this to match up project versions when reimporting the file
+  description: ""
+  projectId: a7412569-8e2d-4a52-afbb-2e937813b213 # DO NOT CHANGE - Unique ID of the project from which this file was generated
+  title: Git Test 1
+  timezone: null
+  appTheme: SYS_PREF
+  codeLanguage: PYTHON
+  status: null
+  categories: []
+  castDecimalsDefault: true
+  logicQueryCacheTimeout: null
+  publishedQueryCacheTimeout: null
+  hexType: PROJECT
+  allowExecutionReordering: true
+  prerunApp: false
+  cachePublishedAppState: true
+  refreshStalePublishedApp: false
+  autoRerunApp: true
+projectAssets:
+  dataConnections: []
+  envVars: []
+  secrets: []
+sharedAssets:
+  secrets: []
+  vcsPackages: []
+  dataConnections:
+    - dataConnectionId: 8b81ef71-ee9b-4e9d-97a8-d1fae99581bc # [Demo] Hex Public Data (snowflake)
+  externalFileIntegrations: []
+cells:
+  - cellType: TEXT
+    cellId: 5a6b6be7-6937-4a76-b92c-c6d9271130b6 # DO NOT CHANGE - Hex uses this to match up cells when reimporting the file, and detect any changes to existing cells
+    cellLabel: null
+    config:
+      richText:
+        - type: h3
+          children:
+            - text: Chaining SQL Queries
+  - cellType: TEXT
+    cellId: d1c6399e-3670-4a41-b3f6-e180dc83b775 # DO NOT CHANGE - Hex uses this to match up cells when reimporting the file, and detect any changes to existing cells
+    cellLabel: null
+    config:
+      richText:
+        - type: paragraph
+          children:
+            - text: "Chaining SQL lets you query the output of another SQL cell. Learn more about chained SQL "
+              italic: true
+            - url: https://learn.hex.tech/docs/logic-cell-types/sql-cells/overview#chained-sql
+              type: a
+              children:
+                - text: here
+                  italic: true
+            - text: .
+              italic: true
+  - cellType: SQL
+    cellId: 28bb6013-dacc-4401-8255-51625a0cbd5f # DO NOT CHANGE - Hex uses this to match up cells when reimporting the file, and detect any changes to existing cells
+    cellLabel: Orders
+    config:
+      source: select * from prod.order_details
+      dataFrameCell: false
+      dataConnectionId: 8b81ef71-ee9b-4e9d-97a8-d1fae99581bc
+      resultVariableName: orders
+      useRichDisplay: true
+      sqlCellOutputType: PANDAS
+      useQueryMode: false
+      castDecimals: true
+      useNativeDates: true
+      outputFilteredResult: true
+      allowDuplicateColumns: false
+      tableDisplayConfig:
+        pageSize: 50
+        height: null
+        hideIcons: false
+        defaultColumnWidth: null
+        hideIndex: false
+        defaultSortColumn: null
+        defaultSortIndexColumn: null
+        defaultSortDirection: ASC
+        conditionalFormatting: null
+        calcs: null
+        filters: null
+        columnProperties:
+          - originalName: CATEGORY
+            renameTo: null
+            size: 120
+            wrapText: null
+            displayFormat: null
+          - originalName: CUSTOMER_ID
+            renameTo: null
+            size: 120
+            wrapText: null
+            displayFormat: null
+          - originalName: IS_ALLERGEN_FREE
+            renameTo: null
+            size: 160
+            wrapText: null
+            displayFormat: null
+          - originalName: IS_SPICY
+            renameTo: null
+            size: 120
+            wrapText: null
+            displayFormat: null
+          - originalName: MENU_ITEM
+            renameTo: null
+            size: 120
+            wrapText: null
+            displayFormat: null
+          - originalName: MENU_ITEM_ID
+            renameTo: null
+            size: 120
+            wrapText: null
+            displayFormat: null
+          - originalName: ORDERED_AT
+            renameTo: null
+            size: 120
+            wrapText: null
+            displayFormat: null
+          - originalName: ORDER_DATE
+            renameTo: null
+            size: 120
+            wrapText: null
+            displayFormat: null
+          - originalName: ORDER_ID
+            renameTo: null
+            size: 120
+            wrapText: null
+            displayFormat: null
+          - originalName: ORDER_ITEM_ID
+            renameTo: null
+            size: 130
+            wrapText: null
+            displayFormat: null
+          - originalName: ORDER_STATUS
+            renameTo: null
+            size: 120
+            wrapText: null
+            displayFormat: null
+          - originalName: PRICE
+            renameTo: null
+            size: 120
+            wrapText: null
+            displayFormat: null
+          - originalName: row-index-0
+            renameTo: null
+            size: 46
+            wrapText: null
+            displayFormat: null
+        columnOrdering: null
+        customColumnOrdering: null
+        pinnedColumns: null
+        hiddenColumns: null
+        pinIndexColumns: false
+        showAggregations: false
+        columnAggregations: null
+  - cellType: SQL
+    cellId: b353ce79-a4d1-4087-8469-5cd44ffabc43 # DO NOT CHANGE - Hex uses this to match up cells when reimporting the file, and detect any changes to existing cells
+    cellLabel: Orders grouped by order id
+    config:
+      source: |-
+        select order_id
+            , count(distinct menu_item_id)
+            , sum(price) as order_value
+        from orders
+        group by 1
+      dataFrameCell: true
+      dataConnectionId: null
+      resultVariableName: orders_grouped_by_order_id
+      useRichDisplay: true
+      sqlCellOutputType: PANDAS
+      useQueryMode: false
+      castDecimals: true
+      useNativeDates: true
+      outputFilteredResult: true
+      allowDuplicateColumns: false
+      tableDisplayConfig:
+        pageSize: 50
+        height: null
+        hideIcons: false
+        defaultColumnWidth: null
+        hideIndex: false
+        defaultSortColumn: null
+        defaultSortIndexColumn: null
+        defaultSortDirection: ASC
+        conditionalFormatting: null
+        calcs: null
+        filters: null
+        columnProperties:
+          - originalName: ORDER_ID
+            renameTo: null
+            size: 110
+            wrapText: null
+            displayFormat: null
+          - originalName: count(DISTINCT menu_item_id)
+            renameTo: null
+            size: 226
+            wrapText: null
+            displayFormat: null
+          - originalName: order_value
+            renameTo: null
+            size: 115
+            wrapText: null
+            displayFormat: null
+          - originalName: row-index-0
+            renameTo: null
+            size: 46
+            wrapText: null
+            displayFormat: null
+        columnOrdering: null
+        customColumnOrdering: null
+        pinnedColumns: null
+        hiddenColumns: null
+        pinIndexColumns: false
+        showAggregations: false
+        columnAggregations: null
+  - cellType: TEXT
+    cellId: c7ca533e-163e-453b-a662-ebb29793ee29 # DO NOT CHANGE - Hex uses this to match up cells when reimporting the file, and detect any changes to existing cells
+    cellLabel: null
+    config:
+      richText:
+        - type: paragraph
+          children:
+            - text: Added a text cell!
+appLayout:
+  visibleMetadataFields:
+    - NAME
+    - DESCRIPTION
+    - AUTHOR
+    - LAST_EDITED
+    - LAST_RUN
+    - CATEGORIES
+    - STATUS
+    - TABLE_OF_CONTENTS
+  fullWidth: false
+  tabs:
+    - name: Tab 1
+      rows:
+        - columns:
+            - start: 0
+              end: 120
+              elements:
+                - showSource: false
+                  hideOutput: false
+                  type: CELL
+                  cellId: 5a6b6be7-6937-4a76-b92c-c6d9271130b6
+                  sharedFilterId: null
+                  height: null
+                  showLabel: true
+        - columns:
+            - start: 0
+              end: 120
+              elements:
+                - showSource: false
+                  hideOutput: false
+                  type: CELL
+                  cellId: d1c6399e-3670-4a41-b3f6-e180dc83b775
+                  sharedFilterId: null
+                  height: null
+                  showLabel: true
+        - columns:
+            - start: 0
+              end: 120
+              elements:
+                - showSource: false
+                  hideOutput: false
+                  type: CELL
+                  cellId: c7ca533e-163e-453b-a662-ebb29793ee29
+                  sharedFilterId: null
+                  height: null
+                  showLabel: true
+sharedFilters: []
